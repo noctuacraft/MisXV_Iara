@@ -1,1 +1,2 @@
 SHA2-256(confirmaciones.enc)= b7bd4f815c5425a520c9f1a9d337afd9c9ffec1efed86f6174e85166c1a80fca
+SHA2-256(confirmaciones.enc)= d7cc8799d302d7f2f78c2de1228a251f953c58c7d022d9e7d0f6f94571ff2745
