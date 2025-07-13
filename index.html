@@ -1,0 +1,1099 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>⚡ XV IARA ⚡</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@900&family=Poppins:wght@300;700&display=swap');
+        
+        :root {
+            --neon-pink: #ff00ff;
+            --neon-blue: #00f0ff;
+            --neon-purple: #9600ff;
+            --neon-green: #00ff88;
+            --neon-yellow: #ffee00;
+            --black: #000;
+        }
+        
+        /* Efecto de selección LOCO */
+        ::selection {
+            background: var(--neon-pink);
+            color: white;
+            text-shadow: 0 0 5px var(--neon-blue);
+        }
+        
+        ::-moz-selection {
+            background: var(--neon-pink);
+            color: white;
+            text-shadow: 0 0 5px var(--neon-blue);
+        }
+        
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--black);
+            color: white;
+            overflow-x: hidden;
+            cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="%23ff00ff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/></svg>'), auto;
+            touch-action: manipulation;
+        }
+        
+        .glitch-effect {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('https://media.giphy.com/media/3o7abKhOpu0NwenH3O/giphy.gif') center/cover;
+            opacity: 0.03;
+            z-index: -1;
+            pointer-events: none;
+        }
+        
+        .invitation-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            position: relative;
+            overflow: hidden;
+            border: 3px solid var(--neon-pink);
+            box-shadow: 0 0 30px var(--neon-purple);
+            animation: borderGlow 3s infinite alternate;
+        }
+        
+        @keyframes borderGlow {
+            0% { border-color: var(--neon-pink); box-shadow: 0 0 30px var(--neon-pink); }
+            25% { border-color: var(--neon-blue); box-shadow: 0 0 50px var(--neon-blue); }
+            50% { border-color: var(--neon-green); box-shadow: 0 0 70px var(--neon-green); }
+            75% { border-color: var(--neon-yellow); box-shadow: 0 0 50px var(--neon-yellow); }
+            100% { border-color: var(--neon-purple); box-shadow: 0 0 70px var(--neon-purple); }
+        }
+        
+        .cyber-header {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            background: radial-gradient(circle at center, transparent 0%, var(--black) 70%);
+        }
+        
+        .cyber-header::before {
+            content: "";
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: 
+                linear-gradient(45deg, var(--neon-pink) 0%, transparent 50%),
+                linear-gradient(-45deg, var(--neon-blue) 0%, transparent 50%),
+                linear-gradient(135deg, var(--neon-purple) 0%, transparent 50%),
+                linear-gradient(225deg, var(--neon-green) 0%, transparent 50%);
+            opacity: 0.3;
+            z-index: -1;
+            animation: rotateBg 20s linear infinite;
+        }
+        
+        @keyframes rotateBg {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        
+        h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 6rem;
+            margin: 0;
+            text-transform: uppercase;
+            background: linear-gradient(90deg, 
+                var(--neon-pink), 
+                var(--neon-blue), 
+                var(--neon-green),
+                var(--neon-yellow),
+                var(--neon-purple));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            text-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+            animation: textGlow 2s infinite alternate;
+        }
+        
+        @keyframes textGlow {
+            0% { text-shadow: 0 0 10px rgba(255, 255, 255, 0.3); }
+            25% { text-shadow: 0 0 20px var(--neon-pink), 0 0 30px var(--neon-blue); }
+            50% { text-shadow: 0 0 20px var(--neon-green), 0 0 30px var(--neon-yellow); }
+            75% { text-shadow: 0 0 20px var(--neon-blue), 0 0 30px var(--neon-purple); }
+            100% { text-shadow: 0 0 20px var(--neon-yellow), 0 0 30px var(--neon-pink); }
+        }
+        
+        h2 {
+            font-size: 2rem;
+            margin: 20px 0;
+            text-transform: uppercase;
+            letter-spacing: 5px;
+            color: white;
+            position: relative;
+            display: inline-block;
+        }
+        
+        h2::after {
+            content: "";
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: linear-gradient(90deg, 
+                var(--neon-pink), 
+                var(--neon-blue), 
+                var(--neon-green),
+                var(--neon-yellow),
+                var(--neon-purple));
+            transform: scaleX(0);
+            transform-origin: left;
+            animation: lineGrow 2s infinite alternate;
+        }
+        
+        @keyframes lineGrow {
+            0% { transform: scaleX(0); }
+            100% { transform: scaleX(1); }
+        }
+        
+        .neon-btn {
+            display: inline-block;
+            padding: 15px 40px;
+            margin: 30px 10px;
+            border: 2px solid var(--neon-pink);
+            color: white;
+            text-decoration: none;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-weight: bold;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.3s;
+            background: transparent;
+            z-index: 1;
+        }
+        
+        .neon-btn::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, 
+                transparent, 
+                var(--neon-pink), 
+                var(--neon-blue),
+                var(--neon-green),
+                transparent);
+            transition: all 0.5s;
+            z-index: -1;
+        }
+        
+        .neon-btn:hover {
+            color: var(--black);
+            border-color: white;
+            box-shadow: 0 0 20px var(--neon-pink),
+                        0 0 40px var(--neon-blue),
+                        0 0 60px var(--neon-purple);
+        }
+        
+        .neon-btn:hover::before {
+            left: 100%;
+        }
+        
+        .cyber-date {
+            background: rgba(0, 0, 0, 0.7);
+            padding: 20px;
+            border: 1px solid var(--neon-blue);
+            backdrop-filter: blur(10px);
+            margin-top: 5px;
+            max-width: 700px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .cyber-date::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                linear-gradient(45deg, transparent 48%, var(--neon-blue) 49%, var(--neon-blue) 51%, transparent 52%),
+                linear-gradient(-45deg, transparent 48%, var(--neon-pink) 49%, var(--neon-pink) 51%, transparent 52%);
+            background-size: 10px 10px;
+            opacity: 0.3;
+            pointer-events: none;
+        }
+        
+        .matrix-rain {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -2;
+            opacity: 0.2;
+            pointer-events: none;
+        }
+        
+        .dress-code {
+            background: rgba(0, 0, 0, 0.7);
+            padding: 40px;
+            margin: 60px auto;
+            max-width: 800px;
+            border: 1px solid var(--neon-purple);
+            position: relative;
+            backdrop-filter: blur(5px);
+        }
+        
+        .dress-code h3 {
+            color: var(--neon-blue);
+            font-size: 2rem;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+        }
+        
+        .dress-code p {
+            font-size: 1.2rem;
+            line-height: 1.6;
+        }
+        
+        .cyber-countdown {
+            margin: 60px auto;
+            padding: 40px;
+            max-width: 800px;
+            background: rgba(0, 0, 0, 0.7);
+            border: 1px solid var(--neon-pink);
+            backdrop-filter: blur(5px);
+        }
+        
+        .countdown-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+            margin-top: 30px;
+        }
+        
+        .countdown-item {
+            text-align: center;
+            padding: 20px;
+            border: 1px solid var(--neon-blue);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .countdown-item::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                linear-gradient(45deg, transparent 48%, var(--neon-blue) 49%, var(--neon-blue) 51%, transparent 52%),
+                linear-gradient(-45deg, transparent 48%, var(--neon-pink) 49%, var(--neon-pink) 51%, transparent 52%);
+            background-size: 10px 10px;
+            opacity: 0.2;
+            pointer-events: none;
+        }
+        
+        .countdown-number {
+            font-size: 3rem;
+            font-weight: bold;
+            background: linear-gradient(90deg, 
+                var(--neon-pink), 
+                var(--neon-blue), 
+                var(--neon-green));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            margin-bottom: 10px;
+            animation: numberGlow 3s infinite alternate;
+        }
+        
+        @keyframes numberGlow {
+            0% { text-shadow: 0 0 5px var(--neon-pink); }
+            33% { text-shadow: 0 0 10px var(--neon-blue); }
+            66% { text-shadow: 0 0 15px var(--neon-green); }
+            100% { text-shadow: 0 0 20px var(--neon-yellow); }
+        }
+        
+        .countdown-label {
+            font-size: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: white;
+        }
+
+        /* MARIPOSAS CYBERPUNK ULTRA HD */
+        .cyber-butterfly {
+            position: fixed;
+            width: 50px;
+            height: 50px;
+            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><path d="M50 10 Q70 30 50 50 Q30 70 50 90 Q70 70 50 50 Q30 30 50 10" fill="none" stroke="%239600ff" stroke-width="2" stroke-linecap="round"/><path d="M50 10 Q30 30 50 50 Q70 70 50 90" fill="none" stroke="%2300f0ff" stroke-width="2" stroke-linecap="round"/><circle cx="50" cy="50" r="8" fill="%23ff00ff" filter="url(%23glow)"/></svg>');
+            background-size: contain;
+            opacity: 0;
+            z-index: -1;
+            pointer-events: none;
+            filter: drop-shadow(0 0 10px var(--neon-pink));
+            animation: floatButterfly 15s linear infinite;
+        }
+
+        @keyframes floatButterfly {
+            0% { transform: translate(0, 0) rotate(0deg); opacity: 0; filter: drop-shadow(0 0 5px var(--neon-pink)); }
+            10% { opacity: 0.9; filter: drop-shadow(0 0 15px var(--neon-blue)); }
+            30% { filter: drop-shadow(0 0 20px var(--neon-green)); }
+            50% { filter: drop-shadow(0 0 25px var(--neon-pink)); }
+            70% { filter: drop-shadow(0 0 20px var(--neon-yellow)); }
+            90% { opacity: 0.9; filter: drop-shadow(0 0 15px var(--neon-purple)); }
+            100% { transform: translate(calc(100vw - 50px), calc(100vh - 50px)) rotate(360deg); opacity: 0; filter: drop-shadow(0 0 5px var(--neon-blue)); }
+        }
+
+        /* EFECTO DE PARTICULAS TECNO MEJORADO */
+        .tech-particle {
+            position: fixed;
+            width: 8px;
+            height: 8px;
+            background: linear-gradient(45deg, var(--neon-pink), var(--neon-blue));
+            border-radius: 50%;
+            opacity: 0;
+            z-index: -1;
+            pointer-events: none;
+            filter: blur(1px);
+            animation: floatParticle 15s linear infinite;
+            box-shadow: 0 0 10px var(--neon-pink);
+        }
+
+        @keyframes floatParticle {
+            0% { transform: translate(0, 0) scale(0.5); opacity: 0; }
+            20% { opacity: 0.9; transform: scale(1.2); }
+            80% { opacity: 0.9; }
+            100% { transform: translate(random(200) - 100 + 'px', random(200) - 100 + 'px') scale(0.5); opacity: 0; }
+        }
+
+        /* BOTÓN DE MÚSICA MEJORADO */
+        .music-toggle {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 60px;
+            height: 60px;
+            background: rgba(0, 0, 0, 0.7);
+            border: 2px solid var(--neon-pink);
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            z-index: 1000;
+            transition: all 0.3s;
+            box-shadow: 0 0 20px var(--neon-purple);
+        }
+
+        .music-toggle:hover {
+            background: var(--neon-pink);
+            box-shadow: 0 0 30px var(--neon-pink),
+                        0 0 50px var(--neon-blue);
+            transform: scale(1.1);
+        }
+
+        .music-toggle i {
+            color: white;
+            font-size: 1.8rem;
+            text-shadow: 0 0 10px var(--neon-blue);
+        }
+
+        /* NUEVO: EFECTO DE INTERACCIÓN */
+        .interaction-effect {
+            position: fixed;
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            background: radial-gradient(circle, var(--neon-pink), transparent 70%);
+            transform: translate(-50%, -50%) scale(0);
+            opacity: 0;
+            pointer-events: none;
+            z-index: 999;
+            animation: interactionPulse 1s forwards;
+        }
+
+        @keyframes interactionPulse {
+            0% { transform: translate(-50%, -50%) scale(0); opacity: 0.8; }
+            100% { transform: translate(-50%, -50%) scale(3); opacity: 0; }
+        }
+
+        /* NUEVO: NOTIFICACIÓN DE MÚSICA */
+        .music-notification {
+            position: fixed;
+            bottom: 100px;
+            right: 30px;
+            background: rgba(0, 0, 0, 0.8);
+            border: 1px solid var(--neon-green);
+            padding: 10px 20px;
+            border-radius: 5px;
+            color: white;
+            font-family: 'Poppins', sans-serif;
+            z-index: 1000;
+            transform: translateX(100%);
+            opacity: 0;
+            transition: all 0.5s;
+        }
+
+        .music-notification.show {
+            transform: translateX(0);
+            opacity: 1;
+        }
+        
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 3.5rem;
+            }
+            
+            h2 {
+                font-size: 1.5rem;
+            }
+            
+            .countdown-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .music-toggle {
+                width: 50px;
+                height: 50px;
+                bottom: 20px;
+                right: 20px;
+            }
+        }
+    </style>
+    <!-- Font Awesome para el ícono de música -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div class="glitch-effect"></div>
+    <canvas id="matrix" class="matrix-rain"></canvas>
+    
+    <!-- Mariposas cybers (se generan dinámicamente) -->
+    <div id="butterflies-container"></div>
+    
+    <!-- Partículas tecnológicas (nuevo) -->
+    <div id="particles-container"></div>
+    
+    <!-- Botón de música (nuevo) -->
+    <div class="music-toggle" id="musicToggle">
+        <i class="fas fa-pause" id="musicIcon"></i>
+    </div>
+
+    <!-- Notificación de música -->
+    <div class="music-notification" id="musicNotification">
+        Música activada - Toca para pausar
+    </div>
+    
+    <div class="invitation-container">
+        <div class="cyber-header">
+            <h1>XV - IARA</h1>
+            <h2>Te invito a mi fiesta</h2>
+            
+            <div class="cyber-date">
+                <p style="font-size: 1.3rem;">04 · 10 · 2025</p>
+                <p style="font-size: 1.3rem">21:00 - 04:00</p>
+            </div>
+            
+            <div style="margin-top: 50px;">
+                <p style="letter-spacing: 3px; text-transform: uppercase; font-size: 0.9rem;">Has de venir?</p>
+                <div style="height: 40px; width: 2px; background: linear-gradient(to bottom, var(--neon-pink), transparent); margin: 10px auto; animation: scrollPulse 2s infinite;"></div>
+            </div>
+            <a href="https://maps.app.goo.gl/eCfu21doVVZvFYsu8" target="_blank" class="neon-btn">
+                <span style="text-shadow: 0 0 5px var(--neon-blue);">📍 UBICACIÓN</span>
+            </a>
+        </div>
+            
+        
+        <div class="dress-code">
+            <h3>👗 DRESS CODE: Fancy (Elegante)</h3>
+            <p>
+                <span style="color: var(--neon-pink);">➤</span> Prohibido el color celeste (Acá nadie me opaca, eh)<br>
+                <span style="color: var(--neon-pink);">➤</span> Traje elegante (Camisa y cortabata) o vestido<br>
+                <span style="color: var(--neon-pink);">➤</span> Pantalón (Obligatorio)<br>
+                <span style="color: var(--neon-pink);">➤</span> Zapatos <br>
+            </p>
+        </div>
+        
+        <div class="cyber-countdown">
+            <h2 style="text-align: center;">TIEMPO PARA LA FIESTA:</h2>
+            <div class="countdown-grid">
+                <div class="countdown-item">
+                    <div class="countdown-number" id="cyber-days">00</div>
+                    <div class="countdown-label">Días</div>
+                </div>
+                <div class="countdown-item">
+                    <div class="countdown-number" id="cyber-hours">00</div>
+                    <div class="countdown-label">Horas</div>
+                </div>
+                <div class="countdown-item">
+                    <div class="countdown-number" id="cyber-minutes">00</div>
+                    <div class="countdown-label">Minutos</div>
+                </div>
+                <div class="countdown-item">
+                    <div class="countdown-number" id="cyber-seconds">00</div>
+                    <div class="countdown-label">Segundos</div>
+                </div>
+            </div>
+        </div>
+        
+        <div id="rsvp" style="padding: 80px 20px; background: rgba(0, 0, 0, 0.9); border-top: 1px solid var(--neon-purple);">
+            <div style="max-width: 600px; margin: 0 auto;">
+                <h2 style="text-align: center; margin-bottom: 40px;">CONFIRMA TU ASISTENCIA</h2>
+                
+                <form id="cyber-rsvp" style="display: grid; gap: 20px;">
+                    <input type="text" id="invitadoNombre" placeholder="NOMBRE COMPLETO" required style="
+                        padding: 15px;
+                        background: transparent;
+                        border: 1px solid var(--neon-blue);
+                        color: white;
+                        font-family: 'Poppins', sans-serif;
+                        letter-spacing: 1px;
+                    ">
+                    
+                    <input type="email" id="invitadoEmail" placeholder="EMAIL (opcional)" style="
+                        padding: 15px;
+                        background: transparent;
+                        border: 1px solid var(--neon-blue);
+                        color: white;
+                        font-family: 'Poppins', sans-serif;
+                        letter-spacing: 1px;
+                    ">
+                    
+                    <select id="invitadoAsistencia" required style="
+                        padding: 15px;
+                        background: transparent;
+                        border: 1px solid var(--neon-blue);
+                        color: white;
+                        font-family: 'Poppins', sans-serif;
+                        letter-spacing: 1px;
+                        appearance: none;
+                    ">
+                        <option value="" disabled selected>¿ASISTIRÁS?</option>
+                        <option value="si">¡CONFIRMADO! VOY</option>
+                        <option value="no">No, te odio, Iara</option>
+                    </select>
+
+                    <input type="number" id="invitadoAcompanantes" placeholder="NÚMERO DE ACOMPAÑANTES" min="0" style="
+                        padding: 15px;
+                        background: transparent;
+                        border: 1px solid var(--neon-blue);
+                        color: white;
+                        font-family: 'Poppins', sans-serif;
+                        letter-spacing: 1px;
+                    ">
+                    
+                    <label for="invitadoAlergias" style="color: var(--neon-pink); font-size: 1.2rem;">Alergias</label>
+                    <select name="alergias" id="invitadoAlergias" style="
+                        padding: 15px;
+                        background: transparent;
+                        border: 1px solid var(--neon-blue);
+                        color: white;
+                        font-family: 'Poppins', sans-serif;
+                        letter-spacing: 1px;
+                    ">
+                        <option value="">Selecciona una opcion</option>
+                        <option value="Ninguna">Ninguna</option>
+                        <option value="Gluten">Gluten</option>
+                        <option value="Lactosa">Lactosa</option>
+                        <option value="Mariscos">Mariscos</option>
+                        <option value="Frutos secos">Frutos secos</option>
+                        <option value="Otros">Otros</option>
+                    </select>
+                    <input type="text" id="invitadoOtrasAlergias" placeholder="DESCRIBE TUS ALERGIAS (opcional) O AGREGALA SI NO SE MENCIONA" style="
+                        padding: 15px;
+                        background: transparent;
+                        border: 1px solid var(--neon-blue);
+                        color: white;
+                        font-family: 'Poppins', sans-serif;
+                        letter-spacing: 1px;
+                    ">
+
+                    <label for="invitadoPreferencias" style="color: var(--neon-pink); font-size: 1.2rem;">Preferencias ALIMENTICIAS</label>
+                    <select name="preferencias" id="invitadoPreferencias" style="
+                        padding: 15px;
+                        background: transparent;
+                        border: 1px solid var(--neon-blue);
+                        color: white;
+                        font-family: 'Poppins', sans-serif;
+                        letter-spacing: 1px;
+                    ">
+                        <option value="">Selecciona una opcion</option>
+                        <option value="Ninguna">Ninguna</option>
+                        <option value="Vegetariano">Vegetariano</option>
+                        <option value="Vegano">Vegano</option>
+                        <option value="Sin gluten">Sin gluten</option>
+                        <option value="Celiaco">Celiaco</option>
+                        <option value="Otros">Otros</option>
+                    </select>
+                    <input type="text" id="invitadoOtrasPreferencias" placeholder="DESCRIBE TUS PREFERENCIAS ALIMENTICIAS (opcional)" style="
+                        padding: 15px;
+                        background: transparent;
+                        border: 1px solid var(--neon-blue);
+                        color: white;
+                        font-family: 'Poppins', sans-serif;
+                        letter-spacing: 1px;
+                    ">
+                    
+                    <button type="submit" class="neon-btn" style="
+                        width: 100%;
+                        border-color: var(--neon-purple);
+                        font-size: 1.2rem;
+                        margin-top: 30px;
+                        ">
+                        ENVIAR CONFIRMACIÓN
+                    </button>
+
+                    <p id="invitadoAsistencia">Tiempo estimado de confirmación: 5 de agosto del 2025</p>
+                </form>
+            </div>
+        </div>
+        
+        <div style="padding: 40px; text-align: center; border-top: 1px solid var(--neon-pink);">
+            <p style="letter-spacing: 3px; text-transform: uppercase; font-size: 0.9rem;">
+                NO TE OLVIDES: <span style="color: var(--neon-blue);">4/10/2024</span> · <span style="color: var(--neon-pink);">SIN CELESTE</span>
+            </p>
+            <p style="letter-spacing: 3px; text-transform: uppercase; font-size: 0.9rem;">
+                Regalos:<span style="color: var(--neon-blue);"> OBLIGATORIO</span> · <span style="color: var(--neon-pink);">Si es plata, comes más</span>
+            </p>
+            <p>ALIAS: iara.riedel.10</p>
+            <p style="margin-top: 20px; font-size: 0.8rem; opacity: 0.7;">
+                © 2025 - XV IARA - Todos los derechos reservados<br>
+                Diseño by Joaquín Riedel
+            </p>
+        </div>
+    </div>
+
+    <!-- Audio para la música de fondo -->
+    <audio id="bgMusic" loop>
+        <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
+    </audio>
+    
+    <script>
+        // Matrix Rain Effect
+        const canvas = document.getElementById('matrix');
+        const ctx = canvas.getContext('2d');
+        
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+        
+        const katakana = 'アァカサタナハマヤャラワガザダバパイィキシチニヒミリヰギジヂビピウゥクスツヌフムユュルグズブヅプエェケセテネヘメレヱゲゼデベペオォコソトノホモヨョロヲゴゾドボポヴッン';
+        const latin = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+        const nums = '0123456789';
+        
+        const alphabet = katakana + latin + nums;
+        
+        const fontSize = 16;
+        const columns = canvas.width / fontSize;
+        
+        const rainDrops = [];
+        
+        for (let x = 0; x < columns; x++) {
+            rainDrops[x] = 1;
+        }
+        
+        const draw = () => {
+            ctx.fillStyle = 'rgba(0, 0, 0, 0.05)';
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+            
+            ctx.fillStyle = '#0F0';
+            ctx.font = fontSize + 'px monospace';
+            
+            for (let i = 0; i < rainDrops.length; i++) {
+                const text = alphabet.charAt(Math.floor(Math.random() * alphabet.length));
+                ctx.fillText(text, i * fontSize, rainDrops[i] * fontSize);
+                
+                if (rainDrops[i] * fontSize > canvas.height && Math.random() > 0.975) {
+                    rainDrops[i] = 0;
+                }
+                rainDrops[i]++;
+            }
+        };
+        
+        setInterval(draw, 30);
+
+        // Crear mariposas cybers mejoradas
+        function createCyberButterflies() {
+            const container = document.getElementById('butterflies-container');
+            const butterflyCount = 12;
+            
+            for (let i = 0; i < butterflyCount; i++) {
+                const butterfly = document.createElement('div');
+                butterfly.className = 'cyber-butterfly';
+                
+                butterfly.style.left = Math.random() * 100 + 'vw';
+                butterfly.style.top = Math.random() * 100 + 'vh';
+                
+                const size = Math.random() * 40 + 30;
+                butterfly.style.width = size + 'px';
+                butterfly.style.height = size + 'px';
+                
+                const colors = ['var(--neon-pink)', 'var(--neon-blue)', 'var(--neon-purple)', 'var(--neon-green)'];
+                const randomColor = colors[Math.floor(Math.random() * colors.length)];
+                butterfly.style.filter = `drop-shadow(0 0 15px ${randomColor})`;
+                
+                butterfly.style.animationDuration = Math.random() * 20 + 15 + 's';
+                butterfly.style.animationDelay = Math.random() * 15 + 's';
+                butterfly.style.transform = `rotate(${Math.random() * 360}deg)`;
+                
+                container.appendChild(butterfly);
+            }
+        }
+
+        // Crear partículas tecnológicas mejoradas
+        function createTechParticles() {
+            const container = document.getElementById('particles-container');
+            const particleCount = 25;
+            
+            for (let i = 0; i < particleCount; i++) {
+                const particle = document.createElement('div');
+                particle.className = 'tech-particle';
+                
+                particle.style.left = Math.random() * 100 + 'vw';
+                particle.style.top = Math.random() * 100 + 'vh';
+                
+                const size = Math.random() * 6 + 4;
+                particle.style.width = size + 'px';
+                particle.style.height = size + 'px';
+                
+                const colors = [
+                    'var(--neon-pink)', 
+                    'var(--neon-blue)', 
+                    'var(--neon-purple)',
+                    'var(--neon-green)',
+                    'var(--neon-yellow)'
+                ];
+                const color1 = colors[Math.floor(Math.random() * colors.length)];
+                const color2 = colors[Math.floor(Math.random() * colors.length)];
+                particle.style.background = `linear-gradient(45deg, ${color1}, ${color2})`;
+                particle.style.boxShadow = `0 0 15px ${color1}`;
+                
+                particle.style.animationDuration = Math.random() * 25 + 15 + 's';
+                particle.style.animationDelay = Math.random() * 10 + 's';
+                
+                container.appendChild(particle);
+            }
+        }
+
+        // Control de música mejorado
+        const musicToggle = document.getElementById('musicToggle');
+        const musicIcon = document.getElementById('musicIcon');
+        const bgMusic = document.getElementById('bgMusic');
+        const musicNotification = document.getElementById('musicNotification');
+        let isMusicPlaying = false;
+        let firstInteraction = false;
+
+        function showNotification(message) {
+            musicNotification.textContent = message;
+            musicNotification.classList.add('show');
+            
+            setTimeout(() => {
+                musicNotification.classList.remove('show');
+            }, 3000);
+        }
+
+        function toggleMusic() {
+            if (isMusicPlaying) {
+                bgMusic.pause();
+                musicIcon.className = 'fas fa-play';
+                musicToggle.style.borderColor = 'var(--neon-pink)';
+                showNotification('Música pausada - Toca para reproducir');
+            } else {
+                bgMusic.play()
+                    .then(() => {
+                        musicIcon.className = 'fas fa-pause';
+                        musicToggle.style.borderColor = 'var(--neon-blue)';
+                        showNotification('Música activada - Toca para pausar');
+                    })
+                    .catch(error => {
+                        showNotification('Error al reproducir música, pausela y reproduzca de nuevo');
+                        console.error('Error al reproducir:', error);
+                    });
+            }
+            isMusicPlaying = !isMusicPlaying;
+        }
+
+        musicToggle.addEventListener('click', toggleMusic);
+
+        document.addEventListener('click', function(e) {
+            if (!firstInteraction) {
+                firstInteraction = true;
+                toggleMusic();
+                
+                const effect = document.createElement('div');
+                effect.className = 'interaction-effect';
+                effect.style.left = e.clientX + 'px';
+                effect.style.top = e.clientY + 'px';
+                document.body.appendChild(effect);
+                
+                setTimeout(() => {
+                    effect.remove();
+                }, 1000);
+            }
+        });
+
+        document.addEventListener('touchstart', function(e) {
+            if (!firstInteraction) {
+                firstInteraction = true;
+                toggleMusic();
+                
+                const touch = e.touches[0];
+                const effect = document.createElement('div');
+                effect.className = 'interaction-effect';
+                effect.style.left = touch.clientX + 'px';
+                effect.style.top = touch.clientY + 'px';
+                document.body.appendChild(effect);
+                
+                setTimeout(() => {
+                    effect.remove();
+                }, 1000);
+            }
+        });
+
+        // Iniciar efectos
+        createCyberButterflies();
+        createTechParticles();
+        
+        // Cyber Countdown
+        function updateCyberCountdown() {
+            const targetDate = new Date('October 4, 2025 21:00:00').getTime();
+            const now = new Date().getTime();
+            const distance = targetDate - now;
+            
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+            
+            document.getElementById('cyber-days').textContent = days.toString().padStart(2, '0');
+            document.getElementById('cyber-hours').textContent = hours.toString().padStart(2, '0');
+            document.getElementById('cyber-minutes').textContent = minutes.toString().padStart(2, '0');
+            document.getElementById('cyber-seconds').textContent = seconds.toString().padStart(2, '0');
+        }
+        
+        updateCyberCountdown();
+        setInterval(updateCyberCountdown, 1000);
+        
+        // Función para solicitar el token de GitHub de forma segura
+        function getGitHubToken() {
+            let token = localStorage.getItem('gh_token');
+            
+            if (!token) {
+                token = prompt('Por seguridad, ingresa el token de acceso GitHub (solo la primera vez):');
+                if (token) {
+                    localStorage.setItem('gh_token', token);
+                }
+            }
+            
+            return token;
+        }
+
+        // Form submission with cyber effect
+        document.getElementById('cyber-rsvp').addEventListener('submit', async function(e) {
+            e.preventDefault();
+            
+            const confirmacion = {
+                nombre: document.getElementById('invitadoNombre').value,
+                email: document.getElementById('invitadoEmail').value || 'No proporcionado',
+                asistencia: document.getElementById('invitadoAsistencia').value,
+                acompanantes: document.getElementById('invitadoAcompanantes').value || 0,
+                alergias: document.getElementById('invitadoAlergias').value,
+                otrasAlergias: document.getElementById('invitadoOtrasAlergias').value || '',
+                preferencias: document.getElementById('invitadoPreferencias').value,
+                otrasPreferencias: document.getElementById('invitadoOtrasPreferencias').value || ''
+            };
+
+            // Validación básica
+            if (!confirmacion.nombre || !confirmacion.asistencia) {
+                alert('Por favor completa los campos obligatorios');
+                return;
+            }
+
+            try {
+                const token = getGitHubToken();
+                if (!token) {
+                    throw new Error('Se requiere token de acceso');
+                }
+
+                const response = await fetch('https://api.github.com/repos/noctuacraft/MisXV/dispatches', {
+                    method: 'POST',
+                    headers: {
+                        'Authorization': 'token ' + token,
+                        'Accept': 'application/vnd.github.v3+json',
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({
+                        event_type: 'nueva_confirmacion',
+                        client_payload: confirmacion
+                    })
+                });
+                
+                if (response.ok) {
+                    alert('¡Confirmación enviada con éxito!');
+                    if (confirmacion.asistencia === 'si') {
+                        createConfettiEffect();
+                    } else {
+                        createSadEffect();
+                    }
+                    this.reset();
+                } else {
+                    const errorData = await response.json();
+                    throw new Error(errorData.message || 'Error al enviar la confirmación');
+                }
+            } catch (error) {
+                console.error('Error:', error);
+                alert('Error al enviar: ' + error.message);
+                
+                // Si el error es de autenticación, borra el token para pedirlo nuevamente
+                if (error.message.includes('Bad credentials')) {
+                    localStorage.removeItem('gh_token');
+                }
+            }
+        });
+
+        // Efecto de confeti cuando confirman asistencia (mejorado)
+        function createConfettiEffect() {
+            const colors = [
+                'var(--neon-pink)', 
+                'var(--neon-blue)', 
+                'var(--neon-purple)',
+                'var(--neon-green)',
+                'var(--neon-yellow)'
+            ];
+            
+            for (let i = 0; i < 30; i++) {
+                const confetti = document.createElement('div');
+                confetti.style.position = 'fixed';
+                confetti.style.width = Math.random() * 10 + 5 + 'px';
+                confetti.style.height = Math.random() * 10 + 5 + 'px';
+                confetti.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+                confetti.style.borderRadius = Math.random() > 0.5 ? '50%' : '0';
+                confetti.style.left = Math.random() * 100 + 'vw';
+                confetti.style.top = '-20px';
+                confetti.style.zIndex = '9999';
+                confetti.style.animation = `fallConfetti ${Math.random() * 2 + 1}s linear forwards`;
+                confetti.style.boxShadow = `0 0 10px ${colors[Math.floor(Math.random() * colors.length)]}`;
+                
+                document.body.appendChild(confetti);
+                
+                setTimeout(() => {
+                    confetti.remove();
+                }, 2000);
+            }
+            
+            // Agregar keyframes dinámicamente
+            const style = document.createElement('style');
+            style.innerHTML = `
+                @keyframes fallConfetti {
+                    0% { transform: translate(0, 0) rotate(0deg); opacity: 1; }
+                    100% { transform: translate(${Math.random() * 300 - 150}px, 100vh) rotate(${Math.random() * 720 - 360}deg); opacity: 0; }
+                }
+            `;
+            document.head.appendChild(style);
+        }
+
+        // Efecto triste cuando no confirman (mejorado)
+        function createSadEffect() {
+            const colors = [
+                'var(--neon-pink)', 
+                'var(--neon-blue)', 
+                'var(--neon-purple)',
+                'var(--neon-green)',
+                'var(--neon-yellow)'
+            ];
+            
+            const sadFace = document.createElement('div');
+            sadFace.innerHTML = '😢';
+            sadFace.style.position = 'fixed';
+            sadFace.style.fontSize = '4rem';
+            sadFace.style.left = '50%';
+            sadFace.style.top = '50%';
+            sadFace.style.transform = 'translate(-50%, -50%)';
+            sadFace.style.zIndex = '9999';
+            sadFace.style.animation = 'fadeOut 2s forwards';
+            sadFace.style.textShadow = '0 0 20px var(--neon-pink)';
+            
+            document.body.appendChild(sadFace);
+            
+            // Crear efecto de ruptura
+            for (let i = 0; i < 10; i++) {
+                const fragment = document.createElement('div');
+                fragment.style.position = 'fixed';
+                fragment.style.width = '20px';
+                fragment.style.height = '20px';
+                fragment.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+                fragment.style.left = '50%';
+                fragment.style.top = '50%';
+                fragment.style.zIndex = '9998';
+                fragment.style.animation = `fragmentFly ${Math.random() * 1 + 0.5}s forwards`;
+                
+                document.body.appendChild(fragment);
+                
+                setTimeout(() => {
+                    fragment.remove();
+                }, 500);
+            }
+            
+            setTimeout(() => {
+                sadFace.remove();
+            }, 2000);
+            
+            // Agregar keyframes para fragmentos
+            const fragmentStyle = document.createElement('style');
+            fragmentStyle.innerHTML = `
+                @keyframes fragmentFly {
+                    0% { transform: translate(0, 0) scale(1); opacity: 1; }
+                    100% { transform: translate(${Math.random() * 200 - 100}px, ${Math.random() * 200 - 100}px) scale(0); opacity: 0; }
+                }
+            `;
+            document.head.appendChild(fragmentStyle);
+        }
+        
+        // Mouse trail effect mejorado
+        document.addEventListener('mousemove', function(e) {
+            const trail = document.createElement('div');
+            trail.style.position = 'fixed';
+            trail.style.width = '12px';
+            trail.style.height = '12px';
+            trail.style.background = `linear-gradient(45deg, 
+                var(--neon-pink), 
+                var(--neon-blue), 
+                var(--neon-purple))`;
+            trail.style.borderRadius = '50%';
+            trail.style.pointerEvents = 'none';
+            trail.style.left = e.pageX - 6 + 'px';
+            trail.style.top = e.pageY - 6 + 'px';
+            trail.style.zIndex = '9999';
+            trail.style.transform = 'scale(1)';
+            trail.style.transition = 'transform 0.3s, opacity 0.3s';
+            trail.style.boxShadow = `0 0 10px var(--neon-pink), 
+                                   0 0 20px var(--neon-blue)`;
+            
+            document.body.appendChild(trail);
+            
+            setTimeout(() => {
+                trail.style.transform = 'scale(3)';
+                trail.style.opacity = '0';
+            }, 10);
+            
+            setTimeout(() => {
+                trail.remove();
+            }, 300);
+        });
+    </script>
+</body>
+</html>
