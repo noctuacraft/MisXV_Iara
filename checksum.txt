@@ -12,3 +12,4 @@ SHA2-256(confirmaciones.enc)= 0ef0069af3b6c4de241d36692fa55debf47136f3f8b014fa79
 SHA2-256(confirmaciones.enc)= a587a532111be6e70b1e3126883b9ca67a5fa355da5a427f3a3e590d06dc86ab
 SHA2-256(confirmaciones.enc)= d5467cd87d721984ee0adb53e38c9f16336f10a89b1168c2ef47004f09c5a7bb
 SHA2-256(confirmaciones.enc)= 45a4b0dd5ef97b453543bed9fed1930b86817c5bf16e9b1abbd3766f5afaa776
+SHA2-256(confirmaciones.enc)= 74bc676a3d8ec5104cd3a14324380c9638f6996aecd9853575e861b1b2fde385
